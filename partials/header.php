@@ -1,3 +1,3 @@
 <header>
-  <a href="/tarea-lunes">Sistema de ventas</a>
+  <a href="/Sistema-ventas2">Sistema de ventas</a>
 </header>

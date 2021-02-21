@@ -32,7 +32,7 @@
 
 <?php include('includes/header.php')?>
   <body>
-    <?php if(!empty($user)): ?>
+    <?php if(isset($_SESSION['user_id'])): ?>  
       
       <div class="nav nav-expanded" id="nav">
         <div class="icon-nav" id="icon-nav">

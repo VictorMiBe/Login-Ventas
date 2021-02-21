@@ -1,7 +1,7 @@
 <?php
 
   session_start();
- 
+
   if (!empty($_POST['usuario']) && !empty($_POST['password'])) {
 
     require 'db.php';
@@ -45,8 +45,10 @@
   }
 ?>
 <?php include('includes/header.php')?>
+    
+  <?php if(isset($_SESSION['user_id'])): ?>  
+    
     <?php require 'partials/header.php' ?>
-
     <?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
     <?php endif; ?>
@@ -65,5 +67,15 @@
       </form>
     </div>
     
+  <?php else: ?>
+    <?php require 'partials/header.php' ?>
+    <?php header('Location:login.php'); ?>
+  <?php endif; ?>  
   </body>
 </html>
+
+/* 
+
+    victorj11
+
+ */

@@ -17,7 +17,7 @@
         $pass1 = password_hash($_POST['passwordNew'], PASSWORD_BCRYPT);      
         $records3 = $conn->prepare("UPDATE seguridad SET contraseña = '$pass1' WHERE id = :id");
         $records3->bindParam(':id', $_SESSION['user_id']);
-        $records3->execute();
+        
         if ($records3->execute()){
           $message2 = "Se ha actualizado la contraseña";
         }
@@ -34,12 +34,12 @@
 ?>
 
 <?php include('includes/header.php')?>
-    <?php require 'partials/header.php' ?>
 
+  <?php if(isset($_SESSION['user_id'])): ?>   
+    <?php require 'partials/header.php' ?>
     <?php if(!empty($message2)):?>
       <p> <?= $message2 ?></p>
     <?php endif; ?>
-
     <div class="contenedor">
       <h1>Cambiar Contraseña</h1>
       <h4>o <a href="login.php">Atras</a></h4>
@@ -50,5 +50,9 @@
         <input name="cambio" type="submit" value="Enviar">
       </form>
     </div>
+  <?php else: ?>
+    <?php require 'partials/header.php' ?>
+    <?php header('Location:login.php'); ?>
+  <?php endif; ?>  
   </body>
 </html>

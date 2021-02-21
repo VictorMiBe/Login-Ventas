@@ -12,7 +12,6 @@
     $records->bindParam(':usuario', $_POST['usuario']);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
-
     $message = '';
 
     if (count($results) > 0 && password_verify($_POST['password'], $results['contraseña'])) {

@@ -36,10 +36,10 @@
                 <span>Pedidos</span>
               </li>
             </a>
-            <a href="#">
+            <a href="reporte.php" target="_blank">
               <li>
                 <i class="icon-library"></i>
-                <span>Clientes</span>
+                <span>Reportes</span>
               </li>
             </a>
             <a href="#">
